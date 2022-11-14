@@ -37,9 +37,6 @@
             android:layout_marginLeft="6dp"
             android:maxLines="3"
             android:ellipsize="end"/>
-        
-
-
 
     </RelativeLayout>
 
