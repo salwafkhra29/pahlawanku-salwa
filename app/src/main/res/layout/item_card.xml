@@ -38,6 +38,8 @@
             android:maxLines="3"
             android:ellipsize="end"/>
 
+
+
     </RelativeLayout>
 
 
