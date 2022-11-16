@@ -22,17 +22,19 @@ public class AdapterCard extends RecyclerView.Adapter<AdapterCard.ClassViewHolde
     @Override
     public ClassViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View varView = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_card, parent, false);
-        return null;
+        return new ClassViewHolder(varView);
     }
 
     @Override
     public void onBindViewHolder(@NonNull ClassViewHolder holder, int position) {
-
+        ModelPahlawan pahlawan = dataPahlawan.get(position);
+        holder.tvNama.setText(pahlawan.getNama());
+        holder.tvTentang.setText(pahlawan.getTentang());
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+        return dataPahlawan.size();
     }
 
     public class ClassViewHolder extends RecyclerView.ViewHolder{
