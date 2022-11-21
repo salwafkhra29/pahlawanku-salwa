@@ -17,7 +17,7 @@ import java.util.ArrayList;
 
 public class AdapterCard extends RecyclerView.Adapter<AdapterCard.ClassViewHolder>{
     private ArrayList<ModelPahlawan> dataPahlawan;
-    private Context ctx ;
+    private Context ctx;
 
     public AdapterCard(ArrayList<ModelPahlawan> dataPahlawan, Context ctx) {
         this.dataPahlawan = dataPahlawan;
@@ -44,14 +44,14 @@ public class AdapterCard extends RecyclerView.Adapter<AdapterCard.ClassViewHolde
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
+            public void onClick(View v) {
                 String xNama, xTentang, xFoto;
 
                 xNama = pahlawan.getNama();
                 xTentang = pahlawan.getTentang();
                 xFoto = pahlawan.getFoto();
 
-                Intent kirim = new Intent(ctx,DetailActivity.class);
+                Intent kirim = new Intent(ctx, DetailActivity.class);
                 kirim.putExtra("xNama", xNama);
                 kirim.putExtra("xTentang", xTentang);
                 kirim.putExtra("xFoto", xFoto);
@@ -65,8 +65,8 @@ public class AdapterCard extends RecyclerView.Adapter<AdapterCard.ClassViewHolde
         return dataPahlawan.size();
     }
 
-    public class ClassViewHolder extends RecyclerView.ViewHolder{
-        TextView tvNama,tvTentang;
+    public class ClassViewHolder extends RecyclerView.ViewHolder {
+        TextView tvNama, tvTentang;
         ImageView ivFoto;
 
         public ClassViewHolder(@NonNull View itemView) {
@@ -74,7 +74,7 @@ public class AdapterCard extends RecyclerView.Adapter<AdapterCard.ClassViewHolde
             tvNama = itemView.findViewById(R.id.tv_nama);
             tvTentang = itemView.findViewById(R.id.tv_tentang);
             ivFoto = itemView.findViewById(R.id.iv_foto);
-
         }
     }
+
 }
